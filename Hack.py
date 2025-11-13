@@ -15,7 +15,7 @@ by balancing strength, weight, cost, and sustainability using a data-driven scor
 """)
 
 # ---- Load Dataset ----
-DATA_URL = "https://raw.githubusercontent.com/<your-username>/<your-repo-name>/main/material_selection_dataset.csv"
+DATA_URL = "https://github.com/KK-1512/NM_Hack/blob/main/material_selection_dataset.csv"
 
 @st.cache_data
 def load_data():

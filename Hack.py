@@ -11,7 +11,7 @@ st.set_page_config(page_title="AI Material Selector", layout="centered")
 st.title("AI-Based Material Selection for Bottle Holder")
 st.write("""
 This app helps designers choose the **best material** for a universal bottle holder 
-by balancing strength, weight, cost, and sustainability using a data-driven scoring system.
+by balancing strength, weight, cost, and sustainability using a data-driven scoring system. Done by Hasitha S, Krishnakumar V, Kowshic K T
 """)
 
 # ---- Load Dataset ----

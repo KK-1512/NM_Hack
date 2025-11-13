@@ -24,7 +24,7 @@ IMAGE_URL = "https://raw.githubusercontent.com/KK-1512/NM_Hack/main/Hack.jpg"  #
 try:
     response = requests.get(IMAGE_URL, timeout=10)
     img = Image.open(BytesIO(response.content))
-    st.image(img, caption="Universal Bottle Holder Prototype", use_container_width=True)
+    st.image(img, caption="Universal Bottle Holder Prototype", use_column_width=True)
 except Exception as e:
     st.warning("⚠️ Could not load image. Please check the URL or file name in GitHub.")
     st.write(e)

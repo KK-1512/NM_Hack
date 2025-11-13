@@ -34,11 +34,11 @@ if uploaded:
     df = pd.read_csv(uploaded)
 
 if df is not None:
-    st.subheader("📊 Material Dataset")
+    st.subheader("Material Dataset")
     st.dataframe(df)
 
     # ---- Weight sliders ----
-    st.subheader("⚙️ Weight Configuration")
+    st.subheader(" Weight Configuration")
     w_strength_to_weight = st.slider("Weight for Strength-to-Weight Ratio", 0.0, 1.0, 0.6)
     w_sustainability = 1.0 - w_strength_to_weight
     st.write(f"Weight distribution → Strength-to-weight: {w_strength_to_weight:.2f}, Sustainability: {w_sustainability:.2f}")

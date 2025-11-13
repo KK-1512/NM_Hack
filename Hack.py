@@ -20,7 +20,7 @@ DATA_URL = "https://github.com/KK-1512/NM_Hack/blob/main/material_selection_data
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv(DATA_URL)
+        df = pd.read_csv(https://github.com/KK-1512/NM_Hack/blob/main/material_selection_dataset.csv)
         return df
     except:
         st.error("Could not load CSV. Please upload manually below.")

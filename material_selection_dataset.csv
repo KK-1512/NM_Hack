@@ -1,0 +1,31 @@
+Material,Density (g/cc),Tensile Strength (MPa),Elastic Modulus (GPa),Cost (₹/kg),Sustainability (1–10)
+PLA,1.25,60,3.5,200,9
+ABS,1.04,45,2.1,180,6
+PETG,1.27,50,2.3,160,8
+Nylon 6,1.13,75,3.0,220,7
+Carbon-filled Nylon,1.15,110,6.0,450,7
+Polycarbonate,1.2,70,2.5,300,5
+PP,0.9,35,1.5,120,8
+HDPE,0.95,40,1.2,100,9
+PET,1.38,55,2.8,150,8
+Carbon Fiber Reinforced PLA,1.2,100,6.2,500,6
+Aluminium Alloy,2.7,150,69.0,600,5
+Glass Fiber Reinforced Nylon,1.35,130,8.0,480,6
+Recycled ABS,1.04,38,2.0,130,9
+TPU,1.2,30,0.05,300,8
+Carbon Fiber,1.6,500,230.0,2000,4
+Stainless Steel,7.9,520,200.0,350,3
+Brass,8.5,400,100.0,450,3
+Copper,8.9,210,120.0,600,2
+Titanium Alloy,4.5,900,115.0,3000,4
+Magnesium Alloy,1.74,250,45.0,400,5
+Wood Composite,1.05,25,0.8,90,9
+Recycled PET,1.28,60,2.4,120,9
+Polyethylene Terephthalate (R-PET),1.3,58,2.6,130,9
+Polyimide,1.42,100,2.9,700,6
+PEEK,1.32,110,4.0,1500,5
+Epoxy Resin,1.18,80,3.2,250,7
+PLA+ (Enhanced),1.23,65,3.5,210,8
+Bio-Nylon,1.1,85,2.8,230,8
+Recycled PLA,1.22,45,2.0,170,9
+ABS-PC Blend,1.15,70,2.7,270,6

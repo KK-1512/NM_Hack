@@ -15,18 +15,41 @@ by balancing strength, weight, cost, and sustainability using a data-driven scor
 """)
 
 # ---- Load Dataset ----
-DATA_URL = "https://github.com/KK-1512/NM_Hack/blob/main/material_selection_dataset.csv"
+import streamlit as st
+import pandas as pd
+import io
+import requests
 
-@st.cache_data
+# raw file URL for your repo (no change needed)
+DATA_URL = "https://raw.githubusercontent.com/KK-1512/NM_Hack/main/material_selection_dataset.csv"
+
+@st.cache_data(ttl=3600)
 def load_data():
+    # 1) Try to fetch from GitHub raw URL
     try:
-        df = pd.read_csv(DATA_URL)
+        resp = requests.get(DATA_URL, timeout=10)
+        resp.raise_for_status()  # raise HTTPError for bad responses
+        # load into dataframe from text
+        df = pd.read_csv(io.StringIO(resp.text))
+        st.info("✅ Loaded CSV from GitHub raw URL.")
         return df
-    except:
-        st.error("Could not load CSV. Please upload manually below.")
+    except requests.exceptions.RequestException as e:
+        st.warning(f"⚠️ Could not load CSV from GitHub (network/URL issue): {e}")
+    except Exception as e:
+        st.warning(f"⚠️ Unexpected error while loading from GitHub: {e}")
+
+    # 2) Fallback: try to read local file bundled in repo (if present)
+    try:
+        df = pd.read_csv("material_selection_dataset.csv")
+        st.info("🔁 Loaded local CSV bundled in the repository.")
+        return df
+    except FileNotFoundError:
+        st.error("❌ Local CSV not found in repo root either. Please ensure `material_selection_dataset.csv` is present.")
+        return None
+    except Exception as e:
+        st.error(f"❌ Error reading local CSV: {e}")
         return None
 
-df = load_data()
 
 # Option to upload your own dataset
 uploaded = st.file_uploader("Upload your own materials CSV (optional)", type=["csv"])

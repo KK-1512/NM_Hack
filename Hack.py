@@ -30,13 +30,6 @@ def load_data():
 df = load_data()
 
 # Option to upload your own dataset
-uploaded = st.file_uploader("Upload your own materials CSV (optional)", type=["csv"])
-if uploaded:
-    df = pd.read_csv(uploaded)
-
-if df is not None:
-    st.subheader("Material Dataset")
-    st.dataframe(df)
 
     # ---- Weight sliders ----
     st.subheader("Weight Configuration")

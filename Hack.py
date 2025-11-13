@@ -19,7 +19,7 @@ by balancing strength, weight, cost, and sustainability using a data-driven scor
 """)
 
 # ---- Display Project Image ----
-IMAGE_URL = "https://raw.githubusercontent.com/KK-1512/NM_Hack/main/Hack.jpg"  # 🔁 Replace with your actual image name
+IMAGE_URL = "https://github.com/KK-1512/NM_Hack/blob/b15937796a1eb6b857a7ec8823d6c46543c544b9/Hack.jpg"  # 🔁 Replace with your actual image name
 
 try:
     response = requests.get(IMAGE_URL, timeout=10)

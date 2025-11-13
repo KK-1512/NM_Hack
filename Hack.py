@@ -26,7 +26,7 @@ try:
     img = Image.open(BytesIO(response.content))
     st.image(img, caption="Universal Bottle Holder Prototype", use_column_width=True)
 except Exception as e:
-    st.warning("⚠️ Could not load image. Please check the URL or file name in GitHub.")
+    st.warning("Could not load image. Please check the URL or file name in GitHub.")
     st.write(e)
 
 # ---- Load Dataset ----

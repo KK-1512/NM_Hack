@@ -5,15 +5,29 @@ from sklearn.ensemble import RandomForestRegressor
 import joblib
 import io
 import requests
+from PIL import Image
+from io import BytesIO
 
 st.set_page_config(page_title="AI Material Selector", layout="centered")
 
+# ---- Title and Intro ----
 st.title("AI-Based Material Selection for Bottle Holder")
 st.write("""
 This app helps designers choose the **best material** for a universal bottle holder 
-by balancing strength, weight, cost, and sustainability using a data-driven scoring system.
-Done By Hasitha S, Kowshic K T, Krishnakumar V
+by balancing strength, weight, cost, and sustainability using a data-driven scoring system.  
+**Done By:** Hasitha S, Kowshic K T, Krishnakumar V
 """)
+
+# ---- Display Project Image ----
+IMAGE_URL = "https://raw.githubusercontent.com/KK-1512/NM_Hack/main/bottle_holder.jpg"  # 🔁 Replace with your actual image name
+
+try:
+    response = requests.get(IMAGE_URL, timeout=10)
+    img = Image.open(BytesIO(response.content))
+    st.image(img, caption="Universal Bottle Holder Prototype", use_container_width=True)
+except Exception as e:
+    st.warning("⚠️ Could not load image. Please check the URL or file name in GitHub.")
+    st.write(e)
 
 # ---- Load Dataset ----
 DATA_URL = "https://raw.githubusercontent.com/KK-1512/NM_Hack/main/material_selection_dataset.csv"
@@ -23,8 +37,8 @@ def load_data():
     try:
         df = pd.read_csv(DATA_URL)
         return df
-    except:
-        st.error("Could not load CSV. Please upload manually below.")
+    except Exception as e:
+        st.error(f"Could not load CSV from GitHub: {e}")
         return None
 
 df = load_data()
